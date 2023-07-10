@@ -7,25 +7,20 @@ Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilh
 
 Resposta: 
 
-def calcular_idade(ano_nascimento):
-    ano_atual = datetime.datetime.now().year
-    idade = ano_atual - ano_nascimento
-    return idade
+print("Informe seu nome:")
+nome = input()
 
-def obter_ano_nascimento():
-    while True:
-        try:
-            ano_nascimento = int(input("Digite o ano de nascimento (entre 1922 e 2021): "))
-            if 1922 <= ano_nascimento <= 2021:
-                return ano_nascimento
-            else:
-                print("Ano de nascimento inválido. Digite novamente.")
-        except ValueError:
-            print("Entrada inválida. Digite novamente.")
+executar = True
 
-nome_completo = input("Digite o nome completo: ")
-ano_nascimento = obter_ano_nascimento()
-idade = calcular_idade(ano_nascimento)
-
-print("Nome: ", nome_completo)
-print("Idade em 2022: ", idade)
+while(executar == True):
+print("Informe seu ano de nascimento")
+try: 
+ano = int(input())
+if(ano < 1922) or (ano > 2021):
+print("O ano precisa ser entre 1922 e 2021")
+else: 
+idade = 2022 - ano
+print("O usuário", nome, "completou ou completará", idade, "anos de idade no ano de 2022")
+executar = False
+except:
+print("Os anos precisam ser escritos apenas com números")
